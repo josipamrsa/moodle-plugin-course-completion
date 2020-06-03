@@ -33,12 +33,12 @@ $currentuser = $USER->id;
 
 $sql = "SELECT c.id, c.shortname
        FROM mdl_course c 
-       LEFT OUTER JOIN mdl_context cx ON c.id = cx.instanceid 
-       LEFT OUTER JOIN mdl_role_assignments ra ON cx.id = ra.contextid AND ra.roleid = '3'
-       LEFT OUTER JOIN mdl_user u ON ra.userid = u.id WHERE u.id = :currentuser;";
+       WHERE c.visible = :visible and id != :siteid
+       ORDER BY c.shortname";
 
 $courses = $DB->get_records_sql_menu($sql, array(
-    'currentuser' => $currentuser));
+    'visible' => 1,
+    'siteid' => SITEID));
 
 $mform = new coursecompletion_form('', array(
     'courses' => $courses

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <XMLDB PATH="report/coursecompletion/db" VERSION="20200101" COMMENT="XMLDB file for Moodle report/coursecompletion">
+    <TABLES>
+      <TABLE NAME="report_coursecompletion" COMMENT="Default comment for report_coursecompletion, please edit me">
+        <FIELDS>
+          <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        </FIELDS>
+        <KEYS>
+          <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+        </KEYS>
+      </TABLE>
+    </TABLES>
+  </XMLDB>
+  
+  
